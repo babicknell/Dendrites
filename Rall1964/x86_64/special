@@ -10,4 +10,4 @@ if test "" = "yes" ; then
 else
 	NRNIV="${NRNBIN}nrniv"
 fi
-"${NRNIV}" -dll "/Users/brendan/Desktop/Neuron/Py/x86_64/.libs/libnrnmech.so" "$@"
+"${NRNIV}" -dll "/Users/brendan/Desktop/Python/Neuron/Dendrites/Rall1964/x86_64/.libs/libnrnmech.so" "$@"

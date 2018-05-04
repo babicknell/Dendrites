@@ -203,7 +203,7 @@ extern void _cvode_abstol( Symbol**, double*, int);
   hoc_register_dparam_semantics(_mechtype, 0, "area");
   hoc_register_dparam_semantics(_mechtype, 1, "pntproc");
  	hoc_register_var(hoc_scdoub, hoc_vdoub, hoc_intfunc);
- 	ivoc_help("help ?1 gpulse /Users/brendan/Desktop/Neuron/Py/x86_64/gpulse.mod\n");
+ 	ivoc_help("help ?1 gpulse /Users/brendan/Desktop/Python/Neuron/Dendrites/Rall1964/x86_64/gpulse.mod\n");
  hoc_register_limits(_mechtype, _hoc_parm_limits);
  hoc_register_units(_mechtype, _hoc_parm_units);
  }

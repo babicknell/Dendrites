@@ -36,10 +36,10 @@ for i in range(m):
 				G[i,:,k,:] = greens(x[i,:], x[k,:], t[i], t[k])
 
 G_sol = np.zeros((m,n,t_steps))
-for t_ind in range(t_steps):
+for t_ind, time in enumerate(tt):
 	i = 0
-	while (i < m) and (t[i] < tt[t_ind]):
-		G_sol[i,:,t_ind] = greens(0, x[i,:], tt[t_ind], t[i])
+	while (i < m) and (t[i] < time):
+		G_sol[i,:,t_ind] = greens(0, x[i,:], time, t[i])
 		i+=1
 	
 #create coefficient matrix
@@ -47,7 +47,7 @@ A_in = np.zeros((m, n))
 A_out = np.zeros((m, n))
 A_all = np.zeros((m, n))
 
-for i in range(0,m):
+for i in range(m):
 	s_in = (3 - math.floor(4*i/m))*n//4
 	s_out =  math.floor(4*i/m)*n//4
 	for j in range(n):
@@ -64,12 +64,12 @@ V_in = np.zeros((t_steps,))
 V_out = np.zeros((t_steps,))
 V_all = np.zeros((t_steps,))
 
-for t_ind in range(t_steps):
+for t_ind, time in enumerate(tt):
 	vij_in = 0
 	vij_out = 0
 	vij_all = 0
 	i = 0
-	while (i < m) and (t[i] < tt[t_ind]):
+	while (i < m) and (t[i] < time):
 		
 		vij_all += np.sum(A_all[i,:]*G_sol[i,:,t_ind])
 		

@@ -16,7 +16,7 @@ tau_m = cell_out.soma.cm / cell_out.soma.g_pas * 1e-3
 lam = 50 * (cell_out.dend.diam / (cell_out.dend.g_pas * cell_out.dend.Ra))**0.5
 
 # Position 8 synapses in the first 8/9 dendrite segments. Delay between activation of
-# adjacent synapses is tau_m/4
+# adjacent pairs of synapses is tau_m/4
 num_syn = 8
 syn_loc = np.arange(1/9, 1, 1/9) - 1/18
 syn_delay = 0.25*tau_m
