@@ -1,0 +1,5 @@
+outputs/
+__pycache__/
+dendrites/__pycache__/
+
+.DS_Store
